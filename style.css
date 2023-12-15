@@ -1,0 +1,124 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;/*para que 10 px sean igual a 1 rem*/
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1.8rem;
+    line-height: 2;
+    /* font-family: 'Shippori Mincho'; */
+    font-family: 'Noto Sans', sans-serif;
+    
+}
+.svg-img{
+    max-width: 60%;
+}
+.content-svg{
+    text-align: center;
+}
+.responsive{
+    max-width: 100%;
+}
+h1{
+    color:#4651E5;
+    font-size: 5rem;
+}
+p{
+    font-size: 2rem;
+    color: #444444;
+}
+.svg-style{
+    position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+}
+header{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: space-around;
+}
+.section-form{
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 2rem;
+    max-width: 50rem;
+}
+.section-info{
+    max-width: 50rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+input, button{
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 2rem;
+    border-style: none;
+    font-size: 1.8rem;
+}
+input{
+    border: 1px solid #999999;
+}
+.error{
+    border: 1px solid #ff0000;
+}
+.validated{
+    border: 1px solid #06b700;
+}
+button{
+    background-color: #4651E5;
+    color: #fff;
+    cursor: pointer;
+}
+#button {
+    cursor: not-allowed;
+    background-color: #646ce0;
+}
+/* dashboard */
+.background{
+    background-image: linear-gradient(90deg, rgb(165, 180, 252), rgb(70, 81, 229));
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2.5rem;
+    padding: 1rem 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    width: 38rem;
+}
+.visa_logo {
+    float: right;
+    /* padding: 10px; */
+}
+.informationUser{
+    display: flex;
+    gap: 1rem;
+}
+.visa_logo img {
+    width: 70px;
+    height: 40px;
+}
+.informationContent{
+    background-color: #fff;
+    border-radius: 2.5rem;
+    padding: 3rem;
+}
+.informationHistory{
+    background-color: #fff;
+        border-radius: 2.5rem;
+        padding: 3rem;
+        max-width:100%;
+}

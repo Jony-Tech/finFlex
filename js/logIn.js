@@ -24,7 +24,7 @@ function loginValidation(){
 
             if (password.value === value.password) {
                 password.classList.remove('error');
-                // window.location.href = 'dashboard.html'
+                window.location.href = 'dashboard.html'
                 update(value);
             } else {
                 return errorMessage('incorrect password', password);

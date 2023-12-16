@@ -3,12 +3,18 @@ const password = document.querySelector('#password');
 const button = document.querySelector('.button');
 let userInformation = JSON.parse(localStorage.getItem('information'));
 
+button.addEventListener('click', loginValidation);
 
-
-if(document.querySelector('.button')){
-    button.addEventListener('click', loginValidation);
+userActive();
+function userActive(){
+    const updateUser = userInformation.map(user => {
+        if(user.active){
+            return {...user, active:false}
+        }
+        return user;
+    });
+    localStorage.setItem('information', JSON.stringify(updateUser));
 }
-
 
 function loginValidation(){
     const error = document.querySelector('#form p');
@@ -27,13 +33,13 @@ function loginValidation(){
                 window.location.href = 'dashboard.html'
                 update(value);
             } else {
-                return errorMessage('incorrect password', password);
+                errorMessage('incorrect password', password);
             }
         }
     });
 
     if (!userFound) {
-        return errorMessage("this user doesn't exist", email)
+        errorMessage("this user doesn't exist", email)
     }
     
 }

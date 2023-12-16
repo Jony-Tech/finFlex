@@ -12,7 +12,6 @@ html {
 body {
     font-size: 1.8rem;
     line-height: 2;
-    /* font-family: 'Shippori Mincho'; */
     font-family: 'Noto Sans', sans-serif;
     
 }
@@ -47,6 +46,7 @@ header{
 }
 .section-form{
     background-color: #fff;
+    /* background: rgba(255, 255, 255, 0.4); */
     padding: 3rem;
     border-radius: 2rem;
     max-width: 50rem;
@@ -85,7 +85,6 @@ button{
 }
 /* dashboard */
 .background{
-    background-image: linear-gradient(90deg, rgb(165, 180, 252), rgb(70, 81, 229));
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -101,7 +100,6 @@ button{
 }
 .visa_logo {
     float: right;
-    /* padding: 10px; */
 }
 .informationUser{
     display: flex;
@@ -118,7 +116,12 @@ button{
 }
 .informationHistory{
     background-color: #fff;
-        border-radius: 2.5rem;
-        padding: 3rem;
-        max-width:100%;
+    border-radius: 2.5rem;
+    padding: 3rem;
+    max-width:100%;
+    margin-top: 1rem;
+}
+.cardTitle{
+    font-weight: bold;
+    color: #ffffff;
 }

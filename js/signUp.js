@@ -67,19 +67,19 @@ function errorMessage(message, input){
     pError.textContent = message;
     pError.style.color = 'red'
     input.insertAdjacentElement('afterend', pError);
-
     input.classList.add('error');
 }
 function addValidation(input){
     input.classList.add('validated')
 }
-
 function createAccount(){
     let information = {
         name: userName.value,
         email: email.value,
         password: password.value,
-        numberAccount: createAccountNumber(),
+        balance: 50,
+        numberAccount: createNumber('numberCard'),
+        debitCard: createNumber('debitCard'),
         active: false,
     }
     Swal.fire({
@@ -95,10 +95,16 @@ function createAccount(){
     userInformation.push(information)
     localStorage.setItem('information', JSON.stringify(userInformation));
 }
-function createAccountNumber(){
+function createNumber(card){
     let accountNumber = [];
-    for (let i = 0; i <= 10; i++) {
-        accountNumber.push(Math.round(Math.random() * 9))
-    }
+    if(card === 'numberCard'){
+        for (let i = 0; i < 10; i++) {
+        accountNumber.push(Math.round(Math.random() * 9));
+        }  
+    }else{
+        for (let i = 0; i < 16; i++) {
+        accountNumber.push(Math.round(Math.random() * 9));
+        }
+    }  
     return accountNumber.join('')
 }

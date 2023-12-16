@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FinFlex Bank</title>
+    <title>FinFLex Bank</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,29 +40,28 @@
 
     <header>
       <section class="section-info">
-        <h1>FinFlex Bank</h1>
-        <p>Your financial future starts here!</p>
-        <p>
-          Explore the freedom of managing your finances with our virtual banking
-          platform. Deposit dreams, withdraw opportunities. Welcome to the bank
-          where every click is a step towards your financial goals!
-        </p>
+        <!-- <h2>Your best option</h2> -->
         <div class="content-svg">
-          <img class="svg-img" src="img/bank.svg" alt="" />
+          <img class="responsive" src="img/signup.svg" alt="" />
         </div>
       </section>
       <section class="section-form">
-        <h2>Log In</h2>
+        <h2>Sign up</h2>
         <form id="form" action="">
-          <label for="email">Username or email</label>
-          <input id="email" type="text" />
+          <label for="name">Name</label>
+          <input id="name" type="text" />
+          <label for="email">Email</label>
+          <input id="email" type="email" />
           <label for="password">Password</label>
           <input id="password" type="password" />
-          <button type="button" class="button">Sign in</button>
+          <label for="confirmPassword">Confirm password</label>
+          <input id="confirmPassword" type="password" />
+          <button class="button" type="button">Create new account</button>
         </form>
-        <p>Don't have an account? <a href="signUp.html">Sign up</a></p>
+        <p>Already have an account? <a href="index.html">Log In</a></p>
       </section>
-      <script src="js/logIn.js"></script>
+      <script type="module" src="js/signUp.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </header>
   </body>
 </html>

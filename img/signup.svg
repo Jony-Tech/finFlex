@@ -1,48 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FinFLex Bank</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;500;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <svg
-      class="border shadow-md svg-style"
-      viewBox="0 0 1351.68 760.32"
-      xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="none"
-    >
-      <rect
-        class="bg"
-        id="bg"
-        x="0"
-        y="0"
-        width="1351.68"
-        height="760.32"
-        fill="#ffffff"
-      ></rect>
-      <circle
-        cx="2027.52"
-        cy="380.16"
-        r="1351.68"
-        fill="#4651E5"
-        stroke="none"
-        stroke-width="10"
-      ></circle>
-    </svg>
-
-    <header>
-      <section class="section-info">
-        <!-- <h2>Your best option</h2> -->
-        <div class="content-svg">
-          <svg
+<svg
             class="responsive"
             xmlns="http://www.w3.org/2000/svg"
             data-name="Layer 1"
@@ -250,25 +206,3 @@
               fill="#4651E5"
             />
           </svg>
-        </div>
-      </section>
-      <section class="section-form">
-        <h2>Sign up</h2>
-        <form id="form" action="">
-          <label for="name">Name</label>
-          <input id="name" type="text" />
-          <label for="email">Email</label>
-          <input id="email" type="email" />
-          <label for="password">Password</label>
-          <input id="password" type="password" />
-          <label for="confirmPassword">Confirm password</label>
-          <input id="confirmPassword" type="password" />
-          <button class="button" type="button">Create new account</button>
-        </form>
-        <p>Already have an account? <a href="index.html">Log In</a></p>
-      </section>
-      <script type="module" src="js/signUp.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    </header>
-  </body>
-</html>

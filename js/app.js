@@ -4,16 +4,22 @@ const debitCardNumer = document.querySelector('#debitCardNumber');
 const nameInfo = document.querySelector('.name');
 const cardBalance = document.querySelector('#cardBalance');
 const depositBtn = document.querySelector('.depositBtn');
+const withdrawBtn = document.querySelector('.withdrawBtn');
+const informationHistory = document.querySelector('.informationHistory');
 
 document.addEventListener('DOMContentLoaded', loadInfoUser);
 depositBtn.addEventListener('click', () => {
     window.location.href = 'deposit.html';
+});
+withdrawBtn.addEventListener('click', () => {
+    window.location.href = 'withdraw.html';
 });
 
 function loadInfoUser(){
     users.forEach(element => {
         if(element.active){
             setInfoUser(element);
+            setTransactions(element)
         }
     });
 }
@@ -35,7 +41,13 @@ function debitNumber(user){
     }
     return debitCard.join('')
 }
-
+function setTransactions(user){
+    user.transactions.forEach(transactions => {
+        let transactionP = document.createElement('p');
+        transactionP.textContent = transactions;
+        informationHistory.appendChild(transactionP)
+    })
+}
 
 
 

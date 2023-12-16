@@ -30,7 +30,7 @@ function loginValidation(){
 
             if (password.value === value.password) {
                 password.classList.remove('error');
-                window.location.href = 'dashboard.html'
+                window.location.href = 'mainPanel.html'
                 update(value);
             } else {
                 errorMessage('incorrect password', password);

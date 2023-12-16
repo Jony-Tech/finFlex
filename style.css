@@ -34,9 +34,12 @@ p{
 }
 .svg-style{
     position: fixed;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    /* background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
 }
 header{
     display: flex;

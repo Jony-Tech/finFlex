@@ -5,6 +5,7 @@ const nameInfo = document.querySelector('.name');
 const cardBalance = document.querySelector('#cardBalance');
 const depositBtn = document.querySelector('.depositBtn');
 const withdrawBtn = document.querySelector('.withdrawBtn');
+const transferBtn = document.querySelector('.transferBtn');
 const informationHistory = document.querySelector('.informationHistory');
 
 document.addEventListener('DOMContentLoaded', loadInfoUser);
@@ -14,6 +15,10 @@ depositBtn.addEventListener('click', () => {
 withdrawBtn.addEventListener('click', () => {
     window.location.href = 'withdraw.html';
 });
+transferBtn.addEventListener('click', () =>{
+    window.location.href = 'transfers.html';
+});
+
 
 function loadInfoUser(){
     users.forEach(element => {
@@ -44,8 +49,15 @@ function debitNumber(user){
 function setTransactions(user){
     user.transactions.forEach(transactions => {
         let transactionP = document.createElement('p');
+        let hr = document.createElement('hr');
         transactionP.textContent = transactions;
-        informationHistory.appendChild(transactionP)
+        if(transactions.includes('withdrawal')){
+            transactionP.style.color = '#ce0b0b';
+        }else{
+            transactionP.style.color = '#059500';
+        }
+        informationHistory.appendChild(transactionP);
+        transactionP.insertAdjacentElement('afterend', hr);
     })
 }
 

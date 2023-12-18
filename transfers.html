@@ -44,12 +44,12 @@
 
     <div class="header-content">
       <form class="section-form" action="">
-        <img class="responsive" src="img/withdraw.svg" alt="" />
-        <label for="depositAmount"
-          >Choose the amount to withdraw in dollars</label
-        >
+        <img class="responsive" src="img/transfer.svg" alt="" />
+        <label for="cardNumber">Enter the account number or card</label>
+        <input id="cardNumber" type="number" />
+        <label for="depositAmount">Enter the amount to transfer</label>
         <input id="amount" type="number" placeholder="$" />
-        <button type="button" id="withdrawBtn">Confirm withdrawal</button>
+        <button type="button" id="transfertBtn">Confirm transfer</button>
       </form>
       <script src="js/actions.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

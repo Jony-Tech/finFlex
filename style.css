@@ -13,39 +13,50 @@ body {
     font-size: 1.8rem;
     line-height: 2;
     font-family: 'Noto Sans', sans-serif;
-    
+    background: #bc48ff;
+    background: -webkit-linear-gradient(0deg, #bc48ff 0%, #4651e5 100%);
+    background: linear-gradient(0deg, #bc48ff 0%, #4651e5 100%);
 }
-.svg-img{
-    max-width: 60%;
-}
-.content-svg{
+.center{
     text-align: center;
 }
 .responsive{
     max-width: 100%;
 }
 h1{
-    color:#4651E5;
+    color:#ffffff;
     font-size: 5rem;
 }
 p{
     font-size: 2rem;
-    color: #444444;
+    /* color: #ffffff; */
 }
 .svg-style{
     position: fixed;
     width: 100vw;
     height: 100vh;
     z-index: -1;
+    overflow-y: auto;
     /* background-position: center;
     background-size: cover;
     background-repeat: no-repeat; */
 }
-header{
+.header{
+    background-image: url(img/mainPanel.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-y: auto;
+    height: 100vh;
+    padding: 2rem;
+}
+.header-content{
+    overflow-y: auto;
     display: flex;
     align-items: center;
     height: 100vh;
     justify-content: space-around;
+    padding: 2rem;
 }
 .section-form{
     background-color: #fff;
@@ -64,7 +75,7 @@ form{
 input, button{
     margin: 1rem 0;
     padding: 1rem;
-    border-radius: 2rem;
+    border-radius: 1rem;
     border-style: none;
     font-size: 1.8rem;
 }
@@ -106,25 +117,26 @@ button{
 }
 .informationUser{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
 }
 .visa_logo img {
     width: 70px;
     height: 40px;
 }
-.informationContent{
-    background-color: #fff;
-    border-radius: 2.5rem;
-    padding: 3rem;
+
+.informationHistory h3 {
+    text-align: center;
+    color: #000000;
 }
-.informationHistory{
-    background-color: #fff;
-    border-radius: 2.5rem;
-    padding: 3rem;
-    max-width:100%;
-    margin-top: 1rem;
+.informationHistory p {
+    padding: 1rem 0;
 }
 .cardTitle{
     font-weight: bold;
     color: #ffffff;
+}
+text{
+    font-size: 5rem;
 }

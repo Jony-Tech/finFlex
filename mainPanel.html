@@ -13,41 +13,7 @@
     />
   </head>
   <body>
-    <svg
-      class="svg-style"
-      xmlns="http://www.w3.org/2000/svg"
-      version="1.1"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      xmlns:svgjs="http://svgjs.dev/svgjs"
-      width="1440"
-      height="567"
-      preserveAspectRatio="none"
-      viewBox="0 0 1440 567"
-    >
-      <g mask='url("#SvgjsMask1001")' fill="none">
-        <rect
-          width="1440"
-          height="567"
-          x="0"
-          y="0"
-          fill="rgba(70, 81, 229, 1)"
-        ></rect>
-        <path
-          d="M0,567.87C108.699,559.84,227.251,552.352,307.751,478.87C385.298,408.083,362.38,280.425,414.652,189.365C475.098,84.066,650.333,29.143,635.055,-91.307C619.871,-211.019,431.942,-214.619,351.95,-304.967C273.335,-393.76,285.064,-555.591,178.292,-607.207C72.601,-658.3,-56.302,-603.559,-162.582,-553.702C-259.224,-508.367,-324.286,-422.191,-392.006,-339.675C-457.944,-259.33,-528.109,-180.532,-551.876,-79.348C-576.892,27.152,-564.829,138.165,-528.482,241.35C-489.737,351.344,-437.639,465.31,-338.429,526.607C-239.749,587.576,-115.68,576.416,0,567.87"
-          fill="#2733e1"
-        ></path>
-        <path
-          d="M1440 968.918C1518.87 969.011 1595.061 952.883 1666.465 919.387 1746.122 882.019 1825.848 838.815 1874.132 765.261 1926.443 685.572 1977.475 584.12 1945.4940000000001 494.321 1913.193 403.622 1787.961 392.217 1717.797 326.288 1657.791 269.904 1640.522 172.861 1566.034 137.76799999999997 1488.269 101.13099999999997 1392.692 102.61099999999999 1313.376 135.757 1237.035 167.659 1204.846 253.978 1146.817 312.956 1083.689 377.11699999999996 973.9 409.13 957.351 497.606 940.861 585.768 1020.8299999999999 660.52 1067.48 737.124 1108.775 804.935 1146.468 876.906 1213.879 918.851 1280.78 960.479 1361.205 968.825 1440 968.918"
-          fill="#666fe9"
-        ></path>
-      </g>
-      <defs>
-        <mask id="SvgjsMask1001">
-          <rect width="1440" height="567" fill="#ffffff"></rect>
-        </mask>
-      </defs>
-    </svg>
-    <div class="background">
+    <header class="header">
       <div class="informationUser">
         <div class="card">
           <div class="top">
@@ -61,21 +27,32 @@
           <h4 id="cardUser">Jonatan Celestino</h4>
           <span>11/28</span>
         </div>
-        <div class="informationContent">
-          <h2>Welcome <span class="name">Jonatan Celestino</span></h2>
+
+        <div class="section-form">
+          <h2>Welcome <span class="name">Jonatan</span></h2>
           <p>$<span id="cardBalance"></span> USD</p>
           <p>Available balance</p>
           <div>
-            <button class="depositBtn">Deposit</button>
-            <button class="withdrawBtn">Withdraw</button>
-            <button>Transfer</button>
+            <button class="depositBtn">
+              <img src="img/deposit.png" alt="" />
+              <p>Deposit</p>
+            </button>
+            <button class="withdrawBtn">
+              <img src="img/withdraw.png" alt="" />
+              <p>Withdraw</p>
+            </button>
+            <button class="transferBtn">
+              <img src="img/transfer.png" alt="" />
+              <p>Transfer</p>
+            </button>
+          </div>
+          <hr />
+          <div class="informationHistory">
+            <h3 class="RecentTransactions">Recent transactions</h3>
           </div>
         </div>
       </div>
-      <div class="informationHistory">
-        <h3 class="RecentTransactions">Recent transactions</h3>
-      </div>
-    </div>
+    </header>
     <script src="js/app.js"></script>
   </body>
 </html>

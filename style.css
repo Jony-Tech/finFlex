@@ -13,9 +13,10 @@ body {
     font-size: 1.8rem;
     line-height: 2;
     font-family: 'Noto Sans', sans-serif;
-    background: #bc48ff;
-    background: -webkit-linear-gradient(0deg, #bc48ff 0%, #4651e5 100%);
-    background: linear-gradient(0deg, #bc48ff 0%, #4651e5 100%);
+    background: #14243d;
+    /* background: #254472; */
+        /* background: -webkit-linear-gradient(0deg, #254472 0%, #474bff 100%);
+        background: linear-gradient(0deg, #254472 0%, #474bff 100%); */
 }
 .center{
     text-align: center;
@@ -24,12 +25,12 @@ body {
     max-width: 100%;
 }
 h1{
-    color:#ffffff;
+    text-shadow: 8px 8px 15px #4651e5;
     font-size: 5rem;
 }
 p{
-    font-size: 2rem;
-    /* color: #ffffff; */
+    font-size: 1.8rem;
+    /* color: #000000; */
 }
 .svg-style{
     position: fixed;
@@ -37,36 +38,37 @@ p{
     height: 100vh;
     z-index: -1;
     overflow-y: auto;
-    /* background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat; */
 }
-.header{
-    background-image: url(img/mainPanel.svg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.header, .header-content{
+    
     overflow-y: auto;
     height: 100vh;
     padding: 2rem;
-}
-.header-content{
-    overflow-y: auto;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    height: 100vh;
-    justify-content: space-around;
-    padding: 2rem;
+    gap: 1rem;
+}
+@media (min-width: 800px) {
+    .header-content{
+        flex-direction: row;
+        justify-content:space-around;
+    }
 }
 .section-form{
-    background-color: #fff;
-    /* background: rgba(255, 255, 255, 0.4); */
+    background-color: #000000;
     padding: 3rem;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     max-width: 50rem;
+    color: #fff;
+    -webkit-box-shadow: 3px 3px 21.5px -2.5px #4651e5;
+        -moz-box-shadow: 3px 3px 21.5px -2.5px #4651e5;
+        box-shadow: 3px 3px 21.5px -2.5px #4651e5;
 }
 .section-info{
     max-width: 50rem;
+    color: #fff;
 }
 form{
     display: flex;
@@ -99,11 +101,7 @@ button{
 }
 /* dashboard */
 .background{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 .card{
     background: rgba(255, 255, 255, 0.4);
@@ -111,32 +109,33 @@ button{
     padding: 1rem 2rem;
     border: 2px solid rgba(255, 255, 255, 0.2);
     width: 38rem;
+    -webkit-box-shadow: 3px 3px 21.5px -2.5px #4651e5;
+    -moz-box-shadow: 3px 3px 21.5px -2.5px #4651e5;
+    box-shadow: 3px 3px 21.5px -2.5px #4651e5;
 }
 .visa_logo {
     float: right;
-}
-.informationUser{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
 }
 .visa_logo img {
     width: 70px;
     height: 40px;
 }
-
-.informationHistory h3 {
+.informationHistory{
+    display: flex;
+    justify-content: space-between;
+}
+.RecentTransactions {
     text-align: center;
-    color: #000000;
 }
 .informationHistory p {
     padding: 1rem 0;
+    font-size: 1.7rem;
+    /* color: #000000; */
 }
 .cardTitle{
     font-weight: bold;
     color: #ffffff;
 }
-text{
-    font-size: 5rem;
+.logOut{
+    background-color:#ff0000;
 }

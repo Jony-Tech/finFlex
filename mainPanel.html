@@ -13,43 +13,71 @@
     />
   </head>
   <body>
+    <svg
+      class="svg-style"
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:svgjs="http://svgjs.dev/svgjs"
+      width="1440"
+      height="560"
+      preserveAspectRatio="none"
+      viewBox="0 0 1440 560"
+    >
+      <g mask='url("#SvgjsMask1006")' fill="none">
+        <rect width="1440" height="560" x="0" y="0" fill="#0e2a47"></rect>
+        <path
+          d="M0,601.312C109.211,581.489,200.336,516.293,288.29,448.587C369.743,385.885,456.804,321.091,490.276,223.901C522.615,130.001,479.974,31.325,465.851,-66.979C451.726,-165.296,455.642,-266.188,407.394,-353.009C352.141,-452.435,281.164,-554.409,173.917,-592.309C65.219,-630.722,-54.168,-593.06,-162.821,-554.519C-266.971,-517.576,-366.097,-463.29,-434.499,-376.496C-501.191,-291.871,-531.192,-184.943,-538.782,-77.465C-546.01,24.88,-503.245,118.549,-476.454,217.589C-443.85,338.116,-461.674,488.749,-364.431,567.066C-267.441,645.179,-122.532,623.553,0,601.312"
+          fill="#0b2239"
+        ></path>
+        <path
+          d="M1440 1187.048C1555.253 1194.642 1648.786 1095.883 1734.976 1018.991 1811.022 951.148 1857.684 862.626 1904.891 772.309 1954.77 676.879 2038.721 582.58 2018.3429999999998 476.847 1997.992 371.253 1875.252 325.118 1803.301 245.19799999999998 1733.124 167.24900000000002 1702.557 37.69100000000003 1600.647 12.885999999999967 1498.346-12.01400000000001 1413.561 96.24000000000001 1312.489 125.73599999999999 1211.174 155.303 1093.93 124.31299999999999 1008.148 185.798 914.76 252.73399999999998 828.877 357.274 829.149 472.173 829.42 586.757 945.918 661.278 1009.498 756.604 1061.578 834.688 1102.617 915.336 1168.99 981.7 1250.796 1063.495 1324.567 1179.442 1440 1187.048"
+          fill="#113255"
+        ></path>
+      </g>
+      <defs>
+        <mask id="SvgjsMask1006">
+          <rect width="1440" height="560" fill="#ffffff"></rect>
+        </mask>
+      </defs>
+    </svg>
     <header class="header">
-      <div class="informationUser">
-        <div class="card">
-          <div class="top">
-            <span class="cardTitle">FinFlex</span>
-            <div class="visa_logo">
-              <img src="img/visa.png" alt="visa_logo" />
-            </div>
+      <div class="card">
+        <div class="top">
+          <span class="cardTitle">FinFlex</span>
+          <div class="visa_logo">
+            <img src="img/visa.png" alt="visa_logo" />
           </div>
-          <img src="img/chip.png" width="50px" />
-          <h3 id="debitCardNumber">1231 3453 4356 2345</h3>
-          <h4 id="cardUser">Jonatan Celestino</h4>
-          <span>11/28</span>
         </div>
-
-        <div class="section-form">
-          <h2>Welcome <span class="name">Jonatan</span></h2>
-          <p>$<span id="cardBalance"></span> USD</p>
-          <p>Available balance</p>
-          <div>
-            <button class="depositBtn">
-              <img src="img/deposit.png" alt="" />
-              <p>Deposit</p>
-            </button>
-            <button class="withdrawBtn">
-              <img src="img/withdraw.png" alt="" />
-              <p>Withdraw</p>
-            </button>
-            <button class="transferBtn">
-              <img src="img/transfer.png" alt="" />
-              <p>Transfer</p>
-            </button>
-          </div>
-          <hr />
-          <div class="informationHistory">
-            <h3 class="RecentTransactions">Recent transactions</h3>
-          </div>
+        <img src="img/chip.png" width="50px" />
+        <h3 id="debitCardNumber">1231 3453 4356 2345</h3>
+        <h4 id="cardUser">Jonatan Celestino</h4>
+        <span>11/28</span>
+      </div>
+      <div class="section-form">
+        <h2>Welcome <span class="name">Jonatan</span></h2>
+        <p>$<span id="cardBalance"></span> USD</p>
+        <p>Available balance</p>
+        <div>
+          <button class="depositBtn">
+            <!-- <img src="img/deposit.png" alt="" /> -->
+            <p>Deposit</p>
+          </button>
+          <button class="withdrawBtn">
+            <!-- <img src="img/withdraw.png" alt="" /> -->
+            <p>Withdraw</p>
+          </button>
+          <button class="transferBtn">
+            <!-- <img src="img/transfer.png" alt="" /> -->
+            <p>Transfer</p>
+          </button>
+          <button class="logOut">Log out</button>
+        </div>
+        <hr />
+        <h3 class="RecentTransactions">Recent transactions</h3>
+        <div class="informationHistory">
+          <div class="transactions"></div>
+          <div class="amountTransactions"></div>
         </div>
       </div>
     </header>

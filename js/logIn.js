@@ -5,17 +5,6 @@ let userInformation = JSON.parse(localStorage.getItem('information'));
 
 button.addEventListener('click', loginValidation);
 
-userActive();
-function userActive(){
-    const updateUser = userInformation.map(user => {
-        if(user.active){
-            return {...user, active:false}
-        }
-        return user;
-    });
-    localStorage.setItem('information', JSON.stringify(updateUser));
-}
-
 function loginValidation(){
     const error = document.querySelector('#form p');
     if(error){
@@ -49,7 +38,7 @@ function update(value){
         if(user.email === value.email || user.numberAccount === value.numberAccount){
             return {...user, active: true}; 
         }
-            return user;
+            return {...user, active: false} ;
     });
     localStorage.setItem('information', JSON.stringify(updateUser));
 }

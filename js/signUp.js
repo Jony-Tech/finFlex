@@ -81,7 +81,8 @@ function createAccount(){
         numberAccount: createNumber('numberCard'),
         debitCard: createNumber('debitCard'),
         active: false,
-        transactions: []
+        transactions: [],
+        amountTransaction: [],
     }
     Swal.fire({
         title: "Welcome!",

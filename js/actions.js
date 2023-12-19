@@ -19,6 +19,12 @@ if(depositBtn){
     action = 'withdraw';
 }else if(transfertBtn){
     transfertBtn.addEventListener('click', loadInfoUser);
+    document.addEventListener('DOMContentLoaded', () => {
+        Swal.fire({
+            title: "To use this function, it is necessary to have another account created to which the transfer can be made. If you have already created more than one account, use the card information or account number to proceed with the transfer.",
+            icon: "info"
+            });
+    })
     action = 'transfer';
 }
 
@@ -49,17 +55,18 @@ function validateDeposit(user){
     }
 }
 
-function updateBalance(newBalance, transactionType, cardNumber) {
+function updateBalance(newBalance, transactionType, amountType, cardNumber) {
     users = JSON.parse(localStorage.getItem('information'));
     const updatedUsers = users.map(user => {
         if ((action === 'transfer' && user.debitCard === cardNumber) || (action !== 'transfer' && user.active)) {
             const transaction = user.transactions;
             const newTransaction = [transactionType, ...transaction];
-            return { ...user, balance: newBalance, transactions: newTransaction };
+            const amountTransaction = user.amountTransaction;
+            const newAmountTransaction = [amountType, ...amountTransaction];
+            return { ...user, balance: newBalance, transactions: newTransaction, amountTransaction: newAmountTransaction};
         }
         return user;
     });
-    console.log(updatedUsers);
     document.querySelector('.section-form').reset();
     localStorage.setItem('information', JSON.stringify(updatedUsers));
 }
@@ -77,12 +84,10 @@ function confirmMessage(user, operationType){
         if (result.isConfirmed) {
             if(operationType === "deposited"){
                 balance = Number(user.balance) + enteredAmount;
-                updateBalance(balance, `$${enteredAmount} deposit`);
+                updateBalance(balance, "Deposit", `+ $ ${enteredAmount}`);
             }else if(operationType === "withdrawn"){
                 balance = Number(user.balance) - enteredAmount;
-                updateBalance(balance, `$${enteredAmount} withdrawal`);
-            }else if(operationType === 'transferred'){
-                transferOperation(user);
+                updateBalance(balance, 'Withdrawal', `- $ ${enteredAmount}`);
             }
             Swal.fire({
             title: "Successful operation!",
@@ -125,20 +130,52 @@ function validateTransfer(user){
         errorMessage('Digits less than 0 cannot be entered', amount);
     }else if(enteredAmount > user.balance){
         errorMessage("Insufficient funds for transfer", amount)
-    }
-    else{
-        confirmMessage(user, "transferred");   
+    }else{
+        let foundUser = false;
+        users.forEach(toUser =>{
+            if(cardNumber.value === toUser.numberAccount || cardNumber.value === toUser.debitCard){
+                confirmMessageTransfer(user, toUser.name);
+                foundUser = true;
+            }
+        });
+        if(!foundUser){
+            Swal.fire({
+            title: "Error!",
+            text: `User not found, please verify your details`,
+            icon: "error"
+            });
+        }
     }
 }
+function confirmMessageTransfer(user, userName){
+    Swal.fire({
+        title: `Transfer to ${userName}`,
+        text: `confirm transfer of ${enteredAmount} USD`,
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Confirm"
+        }).then((result) => {
+        if (result.isConfirmed) {
+                transferOperation(user);
+            Swal.fire({
+            title: "Successful operation!",
+            text: `$${enteredAmount} has been transferred`,
+            icon: "success"
+            });
+        }
+    });
+}
 function transferOperation(user){
-    users.forEach(cardNum =>{
-            if(cardNumber.value === cardNum.numberAccount){
-                let transfer = Number(cardNum.balance) + enteredAmount;
-                balance = Number(user.balance) -enteredAmount;
+    users.forEach(toUser =>{
+            if(cardNumber.value === toUser.numberAccount || cardNumber.value === toUser.debitCard){
+                let transfer = Number(toUser.balance) + enteredAmount;
+                balance = Number(user.balance) - enteredAmount;
 
-                updateBalance(transfer, `${enteredAmount} transfer`, cardNum.debitCard);
+                updateBalance(transfer, `Transfer of ${user.name}`, `+ $ ${enteredAmount}`, toUser.debitCard);
                 action = false;
-                updateBalance(balance, `${enteredAmount} transfer`);
+                updateBalance(balance, `Transfer to ${toUser.name}`, `- $ ${enteredAmount}`);
             }
     });
 }

@@ -1,1 +1,1 @@
-Bank cashier application in process
+Bank cashier application to practice LocalStorage (in process)

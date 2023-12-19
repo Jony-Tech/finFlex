@@ -96,7 +96,7 @@ function confirmMessage(user, operationType){
             }
             Swal.fire({
             title: "Successful operation!",
-            text: `$${enteredAmount} has been succesfully ${operationType}`,
+            text: `$${enteredAmount} USD has been succesfully ${operationType}`,
             icon: "success"
             });
         }
@@ -166,7 +166,7 @@ function confirmMessageTransfer(user, userName){
                 transferOperation(user);
             Swal.fire({
             title: "Successful operation!",
-            text: `$${enteredAmount} has been transferred`,
+            text: `$${enteredAmount} USD has been transferred`,
             icon: "success"
             });
         }

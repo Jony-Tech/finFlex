@@ -5,10 +5,27 @@ let userInformation = JSON.parse(localStorage.getItem('information'));
 const deleteBtn = document.querySelector('.delete')
 
 button.addEventListener('click', loginValidation);
-deleteBtn.addEventListener("click", () => {
-    localStorage.removeItem('information');
-})
-
+deleteBtn.addEventListener("click",deleteConfirm )
+function deleteConfirm(){
+    Swal.fire({
+        title: "Are you sure you want to delete all accounts?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Confirm"
+        }).then((result) => {
+        if (result.isConfirmed) {
+            localStorage.removeItem('information');
+            Swal.fire({
+            title: "Successful operation!",
+            text: "all accounts have been deleted",
+            icon: "success"
+            });
+        }
+    });
+}
 function loginValidation(){
     const error = document.querySelector('#form p');
     if(error){

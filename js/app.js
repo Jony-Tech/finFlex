@@ -3,12 +3,14 @@ const cardUser = document.querySelector('#cardUser');
 const debitCardNumer = document.querySelector('#debitCardNumber');
 const nameInfo = document.querySelector('.name');
 const cardBalance = document.querySelector('#cardBalance');
+const numberAccount = document.querySelector('.numberAccount');
 const depositBtn = document.querySelector('.depositBtn');
 const withdrawBtn = document.querySelector('.withdrawBtn');
 const transferBtn = document.querySelector('.transferBtn');
 const transactionsList = document.querySelector('.transactions');
 const amountTransactionsList = document.querySelector('.amountTransactions');
 const logOutbtn = document.querySelector('.logOut');
+
 
 document.addEventListener('DOMContentLoaded', loadInfoUser);
 depositBtn.addEventListener('click', () => {
@@ -38,6 +40,7 @@ function setInfoUser(user){
     nameInfo.textContent = user.name;
     debitCardNumer.textContent = debitNumber(user.debitCard);
     cardBalance.textContent = user.balance;
+    numberAccount.textContent = user.numberAccount;
 }
 
 function debitNumber(user){

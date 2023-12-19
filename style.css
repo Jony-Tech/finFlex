@@ -121,7 +121,11 @@ button:hover{
     box-shadow: 3px 3px 9.5px 3.5px #ff0000;
     background-color: #d48383;
 }
-/* dashboard */
+/* main Panel */
+#cardBalance{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
 .background{
     justify-content: center;
 }

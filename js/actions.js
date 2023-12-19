@@ -2,6 +2,7 @@
 let users = JSON.parse(localStorage.getItem('information'));
 const depositBtn = document.querySelector('#depositBtn');
 const amount = document.querySelector('#amount');
+const arrowBackBtn = document.querySelector(".arrowBackBtn");
 let enteredAmount;
 let action;
 let balance;
@@ -11,6 +12,10 @@ const withdrawBtn = document.querySelector('#withdrawBtn');
 const transfertBtn = document.querySelector('#transfertBtn');
 const cardNumber = document.querySelector('#cardNumber');
 
+
+arrowBackBtn.addEventListener('click', () => {
+    window.location.href = "mainPanel.html";
+})
 if(depositBtn){
     depositBtn.addEventListener('click', loadInfoUser);
     action = 'deposit';

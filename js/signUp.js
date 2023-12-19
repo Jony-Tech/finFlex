@@ -77,7 +77,7 @@ function createAccount(){
         name: userName.value,
         email: email.value,
         password: password.value,
-        balance: 50,
+        balance: 0,
         numberAccount: createNumber('numberCard'),
         debitCard: createNumber('debitCard'),
         active: false,

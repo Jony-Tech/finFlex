@@ -2,8 +2,12 @@ const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const button = document.querySelector('.button');
 let userInformation = JSON.parse(localStorage.getItem('information'));
+const deleteBtn = document.querySelector('.delete')
 
 button.addEventListener('click', loginValidation);
+deleteBtn.addEventListener("click", () => {
+    localStorage.removeItem('information');
+})
 
 function loginValidation(){
     const error = document.querySelector('#form p');
@@ -12,7 +16,8 @@ function loginValidation(){
     };
     let userFound = false;
 
-    userInformation.forEach(value => {
+    try {
+        userInformation.forEach(value => {
         if (email.value === value.email || email.value === value.name) {
             email.classList.remove('error');
             userFound = true;
@@ -25,11 +30,15 @@ function loginValidation(){
                 errorMessage('incorrect password', password);
             }
         }
+        if (!userFound) {
+        errorMessage("this user doesn't exist", email);
+        }
     });
-
-    if (!userFound) {
-        errorMessage("this user doesn't exist", email)
+    } catch (error) {
+        errorMessage("this user doesn't exist", email);
     }
+
+    
     
 }
 
